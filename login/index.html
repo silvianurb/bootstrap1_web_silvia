@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
   	<title>Login</title>
+	<link rel="icon" type="image/x-icon" href="../assets/favicon.ico" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -25,30 +26,23 @@
 		      		</div>
 							<div class="w-100">
 								<p class="social-media d-flex justify-content-end">
-									<a href="#" class="social-icon d-flex align-items-center justify-content-center"><span class="fa fa-facebook"></span></a>
-									<a href="#" class="social-icon d-flex align-items-center justify-content-center"><span class="fa fa-twitter"></span></a>
+									<a href="https://www.facebook.com/?locale=id_ID" class="social-icon d-flex align-items-center justify-content-center"><span class="fa fa-facebook"></span></a>
+									<a href="https://twitter.com/" class="social-icon d-flex align-items-center justify-content-center"><span class="fa fa-twitter"></span></a>
 								</p>
 							</div>
 		      	</div>
 						<form action="#" class="login-form">
 		      		<div class="form-group">
 		      			<div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-user"></span></div>
-		      			<input type="text" class="form-control rounded-left" placeholder="Username">
+		      			<input type="text" id="username" class="form-control rounded-left" placeholder="Username">
 		      		</div>
 	            <div class="form-group">
 	            	<div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-lock"></span></div>
-	              <input type="password" class="form-control rounded-left" placeholder="Password">
+	              <input type="password" id="password" class="form-control rounded-left" placeholder="Password">
 	            </div>
 	            <div class="form-group d-flex align-items-center">
-	            	<div class="w-100">
-	            		<label class="checkbox-wrap checkbox-primary mb-0">Save Password
-									  <input type="checkbox" checked>
-									  <span class="checkmark"></span>
-									</label>
-								</div>
-								<div class="w-100 d-flex justify-content-end">
-		            	
-						<a class="btn btn-primary rounded submit" href="../selamatdatang.html">Login</a>
+					<div class="w-100 d-flex justify-content-end">
+						<a id="loginButton" class="btn btn-primary rounded submit" href="../selamatdatang.html">Login</a>
 	            	</div>
 	            </div>
 	            <div class="form-group mt-4">
@@ -62,6 +56,10 @@
 				</div>
 			</div>
 		</div>
+		<!-- Footer -->
+		<footer class="text-center py-5">
+			<p>@Copyright by 21552011400_SILVIA NUR BAITI_TIFRP 221PA</p>
+		</footer>
 	</section>
 
 	<script src="js/jquery.min.js"></script>
@@ -69,6 +67,34 @@
   <script src="js/bootstrap.min.js"></script>
   <script src="js/main.js"></script>
 
+  <script>
+	document.addEventListener("DOMContentLoaded", function() {
+	  // Fungsi untuk menangani login
+	  function handleLogin() {
+		var username = document.getElementById("username").value;
+		var password = document.getElementById("password").value;
+  
+		// Contoh validasi sederhana (ganti dengan validasi sesuai kebutuhan)
+		if (username === "silvia" && password === "silvia123") {
+		  // Jika login berhasil, arahkan ke halaman selamatdatang.html
+		  window.location.href = "../selamatdatang.html";
+		} else {
+		  // Jika login gagal, tampilkan pesan kesalahan
+		  alert("Login failed. Please check your username and password.");
+		}
+	  }
+  
+	  // Tangani klik pada tombol login
+	  var loginButton = document.getElementById("loginButton");
+	  if (loginButton) {
+		loginButton.addEventListener("click", function(event) {
+		  event.preventDefault(); // Mencegah formulir dikirim secara otomatis
+		  handleLogin();
+		});
+	  }
+	});
+  </script>
+  
 	</body>
 </html>
 
